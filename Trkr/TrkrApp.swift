@@ -11,7 +11,9 @@ import SwiftUI
 struct TrkrApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ContentView(location: Locations().primary)
+            }
         }
     }
 }
