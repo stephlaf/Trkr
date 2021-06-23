@@ -25,15 +25,18 @@ struct WorldView: View {
                 CLLocationCoordinate2D(
                 latitude: location.latitude,
                 longitude: location.longitude)) {
-                Image(location.country)
-                    .resizable()
-                    .cornerRadius(10)
-                    .frame(width: 80, height: 40)
-                    .shadow(radius: 1)
+                NavigationLink(destination:
+                    ContentView(location: location)) {
+                        Image(location.country)
+                            .resizable()
+                            .cornerRadius(10)
+                            .frame(width: 80, height: 40)
+                            .shadow(radius: 1)
+                    }
+                }
             }
+            .navigationTitle("Locations")
         }
-        .navigationTitle("Locations")
-    }
 }
 
 struct WorldView_Previews: PreviewProvider {
